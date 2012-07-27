@@ -99,7 +99,7 @@
   </div>
   <div class="field">
     <%= f.label :total %><br />
-   <%= @ivav.total %>
+   <%= @ivac.total %>
   </div>
   <div class="actions">
     <%= f.submit %>
