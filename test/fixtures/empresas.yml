@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  razon_social: MyString
+  direccion: MyString
+  telefono: MyString
+  cuit: MyString
+  condicion_ante_el_iva: MyString
+
+two:
+  razon_social: MyString
+  direccion: MyString
+  telefono: MyString
+  cuit: MyString
+  condicion_ante_el_iva: MyString

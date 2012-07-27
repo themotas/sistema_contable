@@ -1,0 +1,68 @@
+<center><h1>Listado Iva Ventas</h1></center>
+
+<form action="/ivavs/search" method="post">
+<table border=0 CELLSPACING=0 CELLSPACING=0>
+  <tr>
+    <td><input type=text id="dateSearch" name="dateSearch"></td>
+    <td><input type=submit value="buscar"></td>
+  </tr>
+</table>
+</form>
+
+<table border=0 CELLSPACING=0 CELLSPACING=0>
+  <tr>
+    <th>Empresa</th>
+    <th>Tipo de comprobante</th>
+    <th>Codigo de comprobante</th>
+    <th>Nro de comprobante</th>
+    <th>Cliente</th>
+    <th>Fecha de la factura</th>
+    <th>Rubro</th>
+    <th>Neto sin iva</th>
+    <th>Iva</th>
+    <th>Percepcion ingresos brutuos</th>
+    <th>Retencion ingresos brutos</th>
+    <th>Retencion de iva</th>
+    <th>Retencion de ganancias</th>
+    <th>Total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ivavs.each do |ivav| %>
+  <tr>
+    <td><%= ivav.empresa %></td>
+    <td><%= ivav.tipo_de_comprobante %></td>
+    <td><%= ivav.codigo_de_comprobante %></td>
+    <td><%= ivav.nro_de_comprobante %></td>
+    <td><%= ivav.cliente %></td>
+    <td><%= ivav.fecha_de_la_factura %></td>
+    <td><%= ivav.rubro %></td>
+    <td><%= ivav.neto_sin_iva %></td>
+    <td><%= ivav.iva %></td>
+    <td><%= ivav.percepcion_ingresos_brutuos %></td>
+    <td><%= ivav.retencion_ingresos_brutos %></td>
+    <td><%= ivav.retencion_de_iva %></td>
+    <td><%= ivav.retencion_de_ganancias %></td>
+    <td><%= ivav.total %></td>
+    <td><%= link_to 'Show', ivav %></td>
+    <td><%= link_to 'Edit', edit_ivav_path(ivav) %></td>
+    <td><%= link_to 'Destroy', ivav, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<script>
+$(document).ready(function() {
+
+$( "#dateSearch" ).datepicker();
+
+}
+
+</script>
+
+
+<%= link_to 'New Ivav', new_ivav_path %>

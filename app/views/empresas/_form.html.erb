@@ -1,0 +1,41 @@
+<%= form_for(@empresa) do |f| %>
+  <% if @empresa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+
+      <ul>
+      <% @empresa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :razon_social %><br />
+    <%= f.text_field :razon_social %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :cuit %><br />
+    <%= f.text_field :cuit %>
+  </div>
+  <div class="field">
+    <%= f.label :condicion_ante_el_iva %><br />
+    <select id="empresa_condicion_ante_el_iva" name="empresa[condicion_ante_el_iva]">
+     <option value="Inscripto">Inscripto</option>
+     <option value="Monotributista">Monotributista</option>
+     <option value="Exento">Exento</option>     
+    </select>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

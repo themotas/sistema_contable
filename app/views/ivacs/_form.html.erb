@@ -1,0 +1,129 @@
+<%= form_for(@ivac) do |f| %>
+  <% if @ivac.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ivac.errors.count, "error") %> prohibited this ivac from being saved:</h2>
+
+      <ul>
+      <% @ivac.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :empresa %><br />
+    
+    <select id="empresa" name="ivac[empresa]">
+     <% @empresas.each do |empresa| %>
+      <option value="<%= empresa.id %>"
+       <% if empresa == empresa.id -%> selected="selected"<% end -%>
+       >
+     <%= empresa.id %> (<%= empresa.razon_social %>)
+     </option>
+     <% end %>     
+    </select>  
+    
+  </div>
+  <div class="field">
+    <%= f.label :tipo_de_comprobante %><br />
+    <select id="tipo_de_comprobante" name="ivac[tipo_de_comprobante]">
+     <option value="Facturas">Facturas</option>
+     <option value="Notas de Credito">Notas de Credito</option>
+     <option value="Notas de Debito">Notas de Debito</option>
+     <option value="Retenciones">Retenciones</option> 
+     <option value="Liquidaciones">Liquidaciones</option>              
+    </select> 
+  </div>
+  <div class="field">
+    <%= f.label :codigo_de_comprobante %><br />
+    <select id="codigo_de_comprobante" name="ivac[codigo_de_comprobante]">
+     <option value="A">A</option>
+     <option value="B">B</option>
+     <option value="C">C</option>
+    </select>  
+  </div>
+  <div class="field">
+    <%= f.label :nro_de_comprobante %><br />
+    <%= f.text_field :nro_de_comprobante %>
+  </div>
+  <div class="field">
+    <%= f.label :cliente %><br />
+    <select id="cliente" name="ivac[cliente]">
+     <% @clientes.each do |cliente| %>
+      <option value="<%= cliente.id %>"
+       <% if cliente == cliente.id -%> selected="selected"<% end -%>
+       >
+     <%= cliente.id %> (<%= cliente.razon_social %>)
+     </option>
+     <% end %>     
+    </select> 
+  </div>
+  <div class="field">
+    <%= f.label :fecha_de_la_factura %><br />
+    <%= f.date_select :fecha_de_la_factura %>
+  </div>
+  <div class="field">
+    <%= f.label :rubro %><br />
+    <select id="rubro" name="ivac[rubro]">
+     <option value="Venta de Mercaderias">Venta de Mercaderias</option>
+     <option value="Honorarios">Honorarios</option>
+     <option value="Servicios Varios">Servicios Varios</option>
+    </select>  
+  </div>
+  <div class="field">
+    <%= f.label :neto_sin_iva %><br />
+    <%= f.text_field :neto_sin_iva %>
+  </div>
+  <div class="field">
+    <%= f.label :no_gravado_exento %><br />
+    <%= f.text_field :no_gravado_exento %>
+  </div>
+  <div class="field">
+    <%= f.label :iva %><br />
+    <select id="iva" name="ivac[iva]">
+     <option value="21">21 %</option>
+     <option value="10.5">10.5 %</option>
+     <option value="27">27 %</option>
+    </select>  
+  </div>
+  <div class="field">
+    <%= f.label :percepcion_ingresos_brutuos %><br />
+    <%= f.text_field :percepcion_ingresos_brutuos %>
+  </div>
+  <div class="field">
+    <%= f.label :retencion_ingresos_brutos %><br />
+    <%= f.text_field :retencion_ingresos_brutos %>
+  </div>
+  <div class="field">
+    <%= f.label :retencion_de_iva %><br />
+    <%= f.text_field :retencion_de_iva %>
+  </div>
+  <div class="field">
+    <%= f.label :retencion_de_ganancias %><br />
+    <%= f.text_field :retencion_de_ganancias %>
+  </div>
+  <div class="field">
+    <%= f.label :total %><br />
+    <%= @ivac.total %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script>
+$(document).ready(function() {
+
+$("#ivac_neto_sin_iva").val(0);
+$("#ivac_no_gravado_exento").val(0);
+$("#ivac_percepcion_ingresos_brutuos").val(0);
+$("#ivac_retencion_ingresos_brutos").val(0);
+$("#ivac_retencion_de_iva").val(0);
+$("#ivac_retencion_de_ganancias").val(0);
+$("#ivac_total").val(0);
+
+
+
+}); 
+</script>

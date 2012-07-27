@@ -1,0 +1,27 @@
+<center><h1>Listado Iva Clientes</h1></center>
+
+<table border=1 CELLSPACING=0 CELLSPACING=0>
+  <tr>
+    <th>Razon social</th>
+    <th>Cuit</th>
+    <th>Condicion ante el iva</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clientes.each do |cliente| %>
+  <tr>
+    <td><%= cliente.razon_social %></td>
+    <td><%= cliente.cuit %></td>
+    <td><%= cliente.condicion_ante_el_iva %></td>
+    <td><%= link_to 'Show', cliente %></td>
+    <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
+    <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cliente', new_cliente_path %>

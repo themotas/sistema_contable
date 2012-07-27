@@ -1,0 +1,20 @@
+<center><p id="notice"><%= notice %></p></center>
+
+<p>
+  <b>Razon social:</b>
+  <%= @cliente.razon_social %>
+</p>
+
+<p>
+  <b>Cuit:</b>
+  <%= @cliente.cuit %>
+</p>
+
+<p>
+  <b>Condicion ante el iva:</b>
+  <%= @cliente.condicion_ante_el_iva %>
+</p>
+
+
+<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
+<%= link_to 'Back', clientes_path %>

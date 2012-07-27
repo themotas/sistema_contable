@@ -1,0 +1,2 @@
+module IvacsHelper
+end

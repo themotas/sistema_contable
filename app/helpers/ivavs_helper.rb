@@ -1,0 +1,2 @@
+module IvavsHelper
+end

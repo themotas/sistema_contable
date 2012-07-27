@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Empresa:</b>
+  <%= @ivac.empresa %>
+</p>
+
+<p>
+  <b>Tipo de comprobante:</b>
+  <%= @ivac.tipo_de_comprobante %>
+</p>
+
+<p>
+  <b>Codigo de comprobante:</b>
+  <%= @ivac.codigo_de_comprobante %>
+</p>
+
+<p>
+  <b>Nro de comprobante:</b>
+  <%= @ivac.nro_de_comprobante %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @ivac.cliente %>
+</p>
+
+<p>
+  <b>Fecha de la factura:</b>
+  <%= @ivac.fecha_de_la_factura %>
+</p>
+
+<p>
+  <b>Rubro:</b>
+  <%= @ivac.rubro %>
+</p>
+
+<p>
+  <b>Neto sin iva:</b>
+  <%= @ivac.neto_sin_iva %>
+</p>
+
+<p>
+  <b>No gravado exento:</b>
+  <%= @ivac.no_gravado_exento %>
+</p>
+
+<p>
+  <b>Iva:</b>
+  <%= @ivac.iva %>
+</p>
+
+<p>
+  <b>Percepcion ingresos brutuos:</b>
+  <%= @ivac.percepcion_ingresos_brutuos %>
+</p>
+
+<p>
+  <b>Retencion ingresos brutos:</b>
+  <%= @ivac.retencion_ingresos_brutos %>
+</p>
+
+<p>
+  <b>Retencion de iva:</b>
+  <%= @ivac.retencion_de_iva %>
+</p>
+
+<p>
+  <b>Retencion de ganancias:</b>
+  <%= @ivac.retencion_de_ganancias %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @ivac.total %>
+</p>
+
+
+<%= link_to 'Edit', edit_ivac_path(@ivac) %> |
+<%= link_to 'Back', ivacs_path %>

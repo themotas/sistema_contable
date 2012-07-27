@@ -1,0 +1,31 @@
+<center><h1>Listado de Empresas</h1></center>
+
+<table border=0 CELLSPACING=0 CELLSPACING=0>
+  <tr>
+    <th>Razon social</th>
+    <th>Direccion</th>
+    <th>Telefono</th>
+    <th>Cuit</th>
+    <th>Condicion ante el iva</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @empresas.each do |empresa| %>
+  <tr>
+    <td><%= empresa.razon_social %></td>
+    <td><%= empresa.direccion %></td>
+    <td><%= empresa.telefono %></td>
+    <td><%= empresa.cuit %></td>
+    <td><%= empresa.condicion_ante_el_iva %></td>
+    <td><%= link_to 'Show', empresa %></td>
+    <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
+    <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Empresa', new_empresa_path %>

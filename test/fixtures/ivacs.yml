@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  empresa: 1
+  tipo_de_comprobante: MyString
+  codigo_de_comprobante: MyString
+  nro_de_comprobante: MyString
+  cliente: 1
+  fecha_de_la_factura: 2012-07-22
+  rubro: MyString
+  neto_sin_iva: 9.99
+  no_gravado_exento: 9.99
+  iva: 1
+  percepcion_ingresos_brutuos: 9.99
+  retencion_ingresos_brutos: 9.99
+  retencion_de_iva: 9.99
+  retencion_de_ganancias: 9.99
+  total: 9.99
+
+two:
+  empresa: 1
+  tipo_de_comprobante: MyString
+  codigo_de_comprobante: MyString
+  nro_de_comprobante: MyString
+  cliente: 1
+  fecha_de_la_factura: 2012-07-22
+  rubro: MyString
+  neto_sin_iva: 9.99
+  no_gravado_exento: 9.99
+  iva: 1
+  percepcion_ingresos_brutuos: 9.99
+  retencion_ingresos_brutos: 9.99
+  retencion_de_iva: 9.99
+  retencion_de_ganancias: 9.99
+  total: 9.99
